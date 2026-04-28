@@ -1,0 +1,35 @@
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+.dark-mode nav{
+    background-color:rgba(75, 75, 79, 0.581);
+    color: white;
+}
+.dark-mode section{
+    background-color: hsl(240, 9%, 68%);
+    color: white;
+}
+.dark-mode .bg-blue-100{
+    background-color: rgb(92, 96, 96);
+    color: white;
+}
+.dark-mode .bg-white{
+    background-color: rgb(48, 8, 181);
+}
+.dark-mode .text-gray-700{
+    color: white;
+}
+.github-btn {
+    padding: 10px 20px;
+    background-color: #0f65bb;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.github-btn:hover {
+    background-color: #a51717;
+}
+.github {
+    background-color: aqua;
+}
