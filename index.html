@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <div id="progress-bar"
+     class="fixed top-0 left-0 h-1 bg-blue-500 w-0 z-50">
+    </div>
 
     <!-- HERO SECTION -->
 
@@ -24,6 +27,13 @@
 
             <h1 class="text-5xl mb-6">Supreetha C.R</h1>
 
+            <!-- GREETING -->
+            <p id="greeting" class="text-lg text-gray-500 mb-2"></p>
+            <!-- TYPING -->
+            <p class="text-2xl font-bold mb-6">
+                I am a <span id="typing-text" class="text-blue-600"></span>
+            </p>
+
             <p class="text-xl lg:text-2xl text-slate-600 font-bold mb-10 max-w-md mx-auto lg:mx-0">
                 Full-Stack developer | MERN enthusiast | Competitive Programmer
             </p>
@@ -31,11 +41,18 @@
             <div
                 class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center lg:items-start mb-8">
 
-                <a href="#projects" class="bg-red-400 hover:bg-green-500 px-10 py-4 rounded shadow-xl">
+                <!-- GEOLOCATION -->
+                <button onclick="initGeolocation()"
+                    class="bg-purple-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg transition duration-300">
+                    Detect My Location
+                </button>
+                <p id="message" class="mt-4 text-gray-700"></p>
+            
+                <a href="My Project.pptx" class="bg-red-500 hover:bg-green-500 px-10 py-4 rounded shadow-xl">
                     View Projects
                 </a>
 
-                <a href="#resume" class="bg-blue-400 hover:bg-green-500 px-10 py-4 rounded shadow-xl">
+                <a href="Supreetha resume.pdf" class="bg-blue-500 hover:bg-green-500 px-10 py-4 rounded shadow-xl">
                     Download Resume
                 </a>
 
@@ -43,11 +60,13 @@
 
             <div class="flex flex-wrap gap-6 justify-center lg:justify-start text-sm font-bold">
 
-                <span>98 Github commits</span>
+                <span>400+ Github commits</span>
                 <span>100 LeetCode Questions Solved</span>
-                <span>5 live projects completed</span>
+                <span>4 live projects completed</span>
+
             </div>
-   </div>
+
+        </div>
 
         <div class="order-1 lg:order-2 w-full lg:w-96 max-w-sm mx-auto lg:mx-0">
 
@@ -56,14 +75,6 @@
                 loading="lazy">
 
         </div>
-        <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-blue-600 w-0 z-50"></div>
-<button id="back-to-top"
-    class="hidden fixed bottom-24 right-8 bg-black text-white px-4 py-2 rounded shadow-lg">
-    ↑ Top
-</button>
-<p id="typing-text"
-    class="text-xl lg:text-2xl text-slate-600 font-bold mb-10 max-w-md mx-auto lg:mx-0">
-</p>
 
     </section>
 
@@ -75,7 +86,7 @@
 
             <a href="#"
                 class="text-2xl font-bold bg-clip-text bg-gradient-to-r from-red-400 to-slate-700 text-transparent">
-                PC
+                SS
             </a>
 
             <ul class="hidden md:flex items-center gap-10">
@@ -86,14 +97,9 @@
 
                 <li><a href="#skills" class="text-lg font-bold hover:text-blue-600">Skills</a></li>
 
-                <li><a href="#Education" class="text-lg font-bold hover:text-blue-600">Education</a></li>
-
-                <li><a href="#Github" class="text-lg font-bold hover:text-blue-600">GitHub</a></li>
-
-
-
             </ul>
-            <button id="theme-toggle" class="bg-gray-200 px-4 py-2 font-bold">Theme</button>
+            <button id="theme-toggle" class="bg-gray-200 px-4 py-2 rounded font-bold">Theme</button>
+
             <a href="#contact" class="bg-red-400 hover:bg-green-500 rounded transition-all duration-300 px-8 py-3">
                 Let's talk
             </a>
@@ -117,15 +123,6 @@
                 </p>
 
             </div>
-            <div id="project-modal" class="fixed inset-0 hidden bg-black/50 z-50">
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="bg-white p-6 rounded w-full max-w-lg">
-            <h3 id="project-title" class="text-2xl font-bold mb-4"></h3>
-            <p id="project-desc"></p>
-            <button id="project-close" class="mt-4 bg-red-400 px-4 py-2 rounded">Close</button>
-        </div>
-    </div>
-</div>
 
             <!-- Project Search (Feature will attach here) -->
 
@@ -150,80 +147,97 @@
 
     </section>
 
-    <!-- Education -->
+    <!-- EXPERIENCE -->
 
-    <section id="Education" class="py-24 px-8 lg:px-16">
+    <section id="experience" class="py-24 px-8 lg:px-16">
 
         <div class="max-w-4xl mx-auto">
 
             <h2 class="text-4xl text-gray-700 text-center mb-20">
-                Education 
+                Education and Experience
             </h2>
 
-            <!-- existing experience cards remain unchanged -->
-
-        </div>
-
-    </section>
-    <!-- Github -->
-     <a href="https://github.com/Supreetha2004" target="_blank" class="github-btn">
-    Visit My GitHub
-</a>
-<div class="project-card">
-    <h3>Portfolio Website</h3>
-    <p>A personal portfolio built using HTML, CSS, JS</p>
-    
-    <a href="https://github.com/Supreetha2004/portfolio" target="_blank">
-        View Code
-    </a>
-    <h4>Gola</h4>
-    <p>A gola project built using HTML, CSS, JS</p>
-    <a href="https://github.com/Supreetha2004/gola" target="_blank">
-        View Code
-    </a>
-    <h5>Movie time</h5>
-    <p>project built using HTML, CSS, JS</p>
-    <a href="https://github.com/Supreetha2004/gola" target="_blank">
-        View Code
-    </a>
-    <h6>Developer Stats Dashboard</h6>
-    <p>project built using HTML, CSS, JS</p>
-    <a href="https://github.com/Supreetha2004/gola" target="_blank">
-        View Code
-    </a>
-    
-</div>
-<img src="https://github-readme-stats.vercel.app/api?username=Supreetha2004&show_icons=true" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<a href="https://github.com/Supreetha2004" target="_blank">
-    <i class="fab fa-github"></i>
-</a>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<div id="projects-container"></div>
-
-    <!-- SKILLS -->
-
-    <section id="skills" class="py-24 px-8 lg:px-16 bg-blue-100">
-
-        <div class="max-w-7xl mx-auto">
-
-            <h2 class="text-4xl text-center font-bold mb-20">
-                Skills
-            </h2>
-
-            <!-- Dynamic Skills Container -->
-
-            <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="space-y-8">
+                <!-- Card 1 -->
+                <div class="group shadow-2xl rounded-3xl p-8
+                 hover: shadow-4xl transition-all relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-400 opacity-0
+                 group-hover: opacity-100 transition-opacity">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center 
+                 lg:justify-between gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-emarald-400 rounded
+                    flex items-center shadow-2xl">
+                                <span class="text-white font-bold ">VTU</span>
+                            </div>
+                            <div class="font-semibold text-4xl">
+                                B.E in Computer Science(2026)
+                            </div>
+                            <p class="text-md font-semibold">CIT Mandya</p>
+                            <p class="text-md font-semibold text-right">CGPA: 8.0</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group shadow-2xl rounded-3xl p-8
+                 hover: shadow-4xl transition-all relative overflow-hidden">
+                    <div class="absolute inset-0 bg-red-400 opacity-0
+                 group-hover: opacity-100 transition-opacity">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center 
+                 lg:justify-between gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-emarald-400 rounded
+                    flex items-center shadow-2xl">
+                                <span class="text-white font-bold ">pre-university</span>
+                            </div>
+                            <div class="font-semibold text-4xl">
+                                PCMB(2022)
+                            </div>
+                            <p class="text-md font-semibold">BGS pu college</p>
+                            <p class="text-md font-semibold text-right">63%</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group shadow-2xl rounded-3xl p-8
+                 hover: shadow-4xl transition-all relative overflow-hidden">
+                    <div class="absolute inset-0 bg-green-400 opacity-0
+                 group-hover: opacity-100 transition-opacity">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center 
+                 lg:justify-between gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-emarald-400 rounded
+                    flex items-center shadow-2xl">
+                                <span class="text-white font-bold ">karnataka state board</span>
+                            </div>
+                            <div class="font-semibold text-4xl">
+                                SSLC(2020)
+                            </div>
+                            <p class="text-md font-semibold">Rotary High School</p>
+                            <p class="text-md font-semibold text-right">80%</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </section>
+    
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 px-8 lg:px-16 bg-blue-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl text-center font-bold mb-20">Skills</h2>
+
+            <div id="skills-filters" class="flex justify-center gap-4 mb-10"></div>
+
+            <div id="skills-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </div>
+    </section>
+
 
     <!-- CONTACT MODAL -->
-     <button id="lang-toggle" class="bg-gray-200 px-4 py-2 font-bold">
-    EN / KN 
-</button>
 
     <button id="modal-trigger"
         class="fixed bottom-8 right-8 w-16 h-16 bg-blue-900 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl font-bold">
@@ -251,20 +265,9 @@
 
                     <input id="contact-name" type="text" placeholder="Your name"
                         class="w-full border rounded px-4 py-3">
-                        <input id="contact-name" type="text" placeholder="Phone number"
-                        class="w-full border rounded px-4 py-3">
-
 
                     <input id="contact-email" type="email" placeholder="email@website.com"
                         class="w-full border rounded px-4 py-3">
-                        <input id="contact-email" type="email" placeholder="Github"
-                        class="w-full border rounded px-4 py-3">
-                        <input id="contact-email" type="email" placeholder="Linkedln"
-                        class="w-full border rounded px-4 py-3">
-                        <input id="contact-email" type="email" placeholder="Location"
-                        class="w-full border rounded px-4 py-3">
-
-
 
                     <p id="form-message" class="text-sm text-red-500"></p>
 
@@ -289,7 +292,6 @@
     </div>
 
     <!-- MAIN JS ENTRY -->
-
     <script src="js/data/projects.js"></script>
     <script src="js/data/skills.js"></script>
     <script src="js/features/skills-render.js"></script>
@@ -297,13 +299,12 @@
     <script src="js/features/contact-validation.js"></script>
     <script src="js/features/theme-toggle.js"></script>
     <script src="js/features/project-filter.js"></script>
+    <script src="js/features/BackToTop.js"></script>
+    <script src="js/features/geolocation.js"></script>
     <script src="js/features/project-search.js"></script>
-    <script src="js/features/language-switcher.js"></script>
-
-    <script src="js/features/advanced.js"></script>
-    <script src="js/features/script.js"></script>
-
-
+    <script src="js/features/typing-animation.js"></script>
+    <script src="js/features/Scroll-Progress.js"></script>
+    <script src="js/features/Scroll-spy.js"></script>
     <script src="js/main.js"></script>
 
 </body>
