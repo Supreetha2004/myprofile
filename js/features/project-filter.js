@@ -1,59 +1,76 @@
-function filterProject(){
-    const projectsContainer = document.getElementById("projects-container");
-    if(!projectsContainer){
-        console.log("Project container not found");
-        return;
-    }
-    const projectFilter = document.createElement("project-filter");
-    if(!projectFilter){
-        console.log("Project filter not found");
-        return;
-    }
-    projectsContainer.innerHTML="";
-    projectsData.forEach(function(project){
-        //to create an outer card
-        const card=document.createElement("div");
-        card.className="p-8 text-center bg-white rounded-3xl shadow-lg";
+const filterContainer = document.getElementById("project-filters");
+const projectsContainer = document.getElementById("projects-container");
 
-        //create icon
-        const iconBox=document.createElement("div");
-        iconBox.className="w-20 h-20 mx-auto mb-4 flex item-center justify-center ";
+// Get unique categories
+const categories = ["All", ...new Set(projectsData.map(p => p.category))];
 
-        //create icon text
-        const iconText=document.createElement("span");
-        iconText.className="text-2xl text-white font-bold";
-        iconText.textContent=project.shortLabel;
+// Render filter buttons
+function renderFilters() {
+  filterContainer.innerHTML = "";
 
-        //puts icontext inside iconbox
-        iconBox.appendChild(iconText);
+  categories.forEach(category => {
+    const btn = document.createElement("button");
+    btn.innerText = category;
 
+    btn.className =
+      "px-4 py-2 border rounded hover:bg-blue-500 hover:text-white";
 
-        //create the project id
-        const projectId=document.createElement("h2");
-        projectId.className="text-xl font-bold mb-2";
-        projectId.textContent=project.id;
+    btn.addEventListener("click", () => {
+      filterProjects(category);
 
-        //create the project name
-        const projectName=document.createElement("h2");
-        projectName.className="text-xl font-bold mb-2";
-        projectName.textContent=project.name;
+      // Active button highlight
+      document.querySelectorAll("#project-filters button")
+        .forEach(b => b.classList.remove("bg-blue-500", "text-white"));
 
-        //create the project catagory
-        const projectCategory=document.createElement("h2");
-        projectCategory.className="text-xl font-bold mb-2";
-        projectCategory.textContent=project.category;
-
-        //create project description
-        const projectDescription=document.createElement("p");
-        projectDescription.className="text-sm";
-        projectDescription.textContent=project.description;
-
-        //appending all child elements to card
-        card.appendChild(iconBox);
-        card.appendChild(projectName);
-        card.appendChild(projectDescription);
-        //append card to projects container
-        projectsContainer.appendChild(card);
+      btn.classList.add("bg-blue-500", "text-white");
     });
-    console.log("projects container successfully");
+
+    filterContainer.appendChild(btn);
+  });
 }
+
+// Filter function
+function filterProjects(category) {
+  let filtered;
+
+  if (category === "All") {
+    filtered = projectsData;
+  } else {
+    filtered = projectsData.filter(project => project.category === category);
+  }
+
+  renderProjects(filtered);
+}
+
+// Reuse your render function
+function renderProjects(projects) {
+  projectsContainer.innerHTML = "";
+
+  projects.forEach(project => {
+    const card = document.createElement("div");
+
+    card.className =
+      "p-6 bg-white shadow rounded hover:scale-105 transition";
+
+    card.innerHTML = `
+      <h3 class="text-xl font-bold">${project.name}</h3>
+      <p class="text-gray-600">${project.description}</p>
+
+      <p class="text-sm mt-2 font-semibold">${project.category}</p>
+
+      <div class="flex gap-4 mt-4">
+        <a href="${project.liveDemo}" target="_blank"
+          class="text-green-500 font-bold">🌐 Live</a>
+
+        <a href="${project.github}" target="_blank"
+          class="text-blue-500 font-bold">💻 Code</a>
+      </div>
+    `;
+
+    projectsContainer.appendChild(card);
+  });
+}
+
+// Init
+renderFilters();
+renderProjects(projectsData);

@@ -1,33 +1,50 @@
-function createProjectCard(project) {
-    const card = document.createElement("div");
+document.addEventListener("DOMContentLoaded", () => {
 
-    card.className = "bg-white rounded-xl shadow hover:shadow-xl transition overflow-hidden";
+  const searchInput = document.getElementById("project-search");
+  const projectsContainer = document.getElementById("projects-container");
 
-    card.innerHTML = `
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
-            <p class="text-gray-500 mb-4">${project.description}</p>
+  // Safety check (VERY IMPORTANT)
+  if (!searchInput || !projectsContainer || typeof projectsData === "undefined") {
+    console.error("Missing elements or projectsData not loaded");
+    return;
+  }
 
-            <div class="flex flex-wrap gap-2 mb-4">
-                ${project.tech.map(t => `
-                    <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
-                        ${t}
-                    </span>`).join("")}
-            </div>
+  // Render function
+  function renderProjects(projects) {
+    projectsContainer.innerHTML = "";
 
-            <div class="flex justify-between items-center">
-                <button onclick="openProject('${project.title}','${project.description}')"
-                    class="text-blue-600 font-medium hover:underline">
-                    View Details →
-                </button>
+    projects.forEach(project => {
+      const card = document.createElement("div");
+      card.className = "p-6 bg-white shadow rounded";
 
-                <a href="${project.link}" target="_blank"
-                    class="text-sm text-gray-600 hover:text-black">
-                    Live ↗
-                </a>
-            </div>
+      card.innerHTML = `
+        <h3 class="text-xl font-bold">${project.name}</h3>
+        <p class="text-gray-600">${project.description}</p>
+
+        <div class="flex gap-4 mt-4">
+          <a href="${project.liveDemo}" target="_blank" class="text-green-500 font-bold">🌐 Live</a>
+          <a href="${project.github}" target="_blank" class="text-blue-500 font-bold">💻 Code</a>
         </div>
-    `;
+      `;
 
-    return card;
-}
+      projectsContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderProjects(projectsData);
+
+  // SEARCH FEATURE
+  searchInput.addEventListener("input", function () {
+    const searchValue = this.value.toLowerCase();
+
+    const filteredProjects = projectsData.filter(project =>
+      project.name.toLowerCase().includes(searchValue) ||
+      project.description.toLowerCase().includes(searchValue) ||
+      project.category.toLowerCase().includes(searchValue)
+    );
+
+    renderProjects(filteredProjects);
+  });
+
+});
