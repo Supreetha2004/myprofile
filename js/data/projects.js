@@ -28,7 +28,7 @@ const projectsData = [
       "personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "Tailwind CSS", "JavaScript"],
     status: "Demo",
-    liveDemo: "http://127.0.0.1:5500/W4/D5/portfolio-project/index.html",
+    liveDemo: "http://127.0.0.1:5500/myprofile/index.html",
     github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/W4/D5/portfolio-project"
   },
   // {
