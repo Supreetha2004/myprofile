@@ -29,14 +29,14 @@
 
 /* LIGHT MODE DEFAULT */
 body {
-  background: #1e293b;;
+  background: #80d1d1;;
   color:#1e293b;;
   transition: all 0.3s ease;
 }
 
 /* DARK MODE */
 body.dark {
-  background: #0f172a;
+  background: #8da5dd;
   color: rgb(10, 10, 10);
 }
 
