@@ -3,4 +3,5 @@ window.addEventListener("scroll", () => {
   if (!bar) return;
   const total = document.documentElement.scrollHeight - window.innerHeight;
   bar.style.width = ((window.scrollY / total) * 100) + "%";
+  
 });

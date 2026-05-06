@@ -36,6 +36,5 @@ function renderSkills(skills) {
     skillsContainer.appendChild(div);
   });
 }
-
 renderSkillFilters();
 renderSkills(skillsData);

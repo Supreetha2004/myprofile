@@ -1,6 +1,7 @@
 const projectsData = [
   {
     id: 1,
+    
     name: "BookMyShowClone",
     category: "backend",
     description:

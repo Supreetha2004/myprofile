@@ -54,5 +54,6 @@ const skillsData = [
     shortLabel: "S",
     category: "Database",
     description: "Language used to manage and query relational databases."
+    
   }
 ];

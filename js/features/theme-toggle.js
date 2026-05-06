@@ -8,7 +8,6 @@ function applyTheme(dark) {
 
 const saved = localStorage.getItem("theme");
 applyTheme(saved === "dark");
-
 if (toggleBtn) {
   toggleBtn.addEventListener("click", () => {
     const isDark = document.body.classList.contains("dark");

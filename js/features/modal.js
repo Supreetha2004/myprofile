@@ -9,5 +9,6 @@ function initModal() {
 
     close.addEventListener("click", () => {
         modal.classList.add("hidden");
+        
     });
 }

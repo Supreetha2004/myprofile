@@ -5,7 +5,6 @@ function initTypingAnimation() {
     "Competitive Programmer",
     "Problem Solver"
   ];
-
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;

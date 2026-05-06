@@ -17,4 +17,5 @@ function setGreeting() {
 }
 
 // run on page load
+
 document.addEventListener("DOMContentLoaded", setGreeting);

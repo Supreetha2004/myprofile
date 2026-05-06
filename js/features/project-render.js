@@ -13,7 +13,6 @@ function renderProjects(projects) {
       <h3>${project.name}</h3>
       <p>${project.description}</p>
     `;
-
     projectsContainer.appendChild(card);
   });
 }

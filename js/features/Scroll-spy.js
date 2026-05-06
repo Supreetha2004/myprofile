@@ -7,6 +7,7 @@ function initScrollSpy() {
       if (entry.isIntersecting) {
         links.forEach(link => {
           link.classList.toggle("active-link", link.getAttribute("href") === "#" + entry.target.id);
+          
         });
       }
     });

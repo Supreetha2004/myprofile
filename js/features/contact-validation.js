@@ -13,5 +13,6 @@ function initContactValidation() {
         } else {
             message.textContent = "Submitted successfully!";
         }
+        
     });
 }

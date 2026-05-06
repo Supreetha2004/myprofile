@@ -50,5 +50,6 @@ function initGeolocation() {
 
   } else {
     message.textContent = "Geolocation not supported";
+    
   }
 }

@@ -58,5 +58,6 @@ function renderProjects(projects) {
   });
 }
 
+
 renderFilters();
 renderProjects(projectsData);
