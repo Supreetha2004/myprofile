@@ -39,10 +39,10 @@ function renderProjects(projects) {
     const techTags = (project.technologies || [])
       .map(t => `<span class="proj-tag">${t}</span>`).join("");
 
-    const liveLink = project.liveDemo && !["LiveDemo", "http://127.0.0.1:5500/W4/D5/portfolio-project/index.html"].includes(project.liveDemo)
-      ? `<a href="${project.liveDemo}" target="_blank" class="proj-link">🌐 Live Demo</a>` : "";
-    const ghLink = project.github && !["Github"].includes(project.github)
-      ? `<a href="${project.github}" target="_blank" class="proj-link">💻 Source</a>` : "";
+    // const liveLink = project.liveDemo && !["LiveDemo", "http://127.0.0.1:5500/W4/D5/portfolio-project/index.html"].includes(project.liveDemo)
+    //   ? `<a href="${project.liveDemo}" target="_blank" class="proj-link">🌐 Live Demo</a>` : "";
+    // const ghLink = project.github && !["Github"].includes(project.github)
+    //   ? `<a href="${project.github}" target="_blank" class="proj-link">💻 Source</a>` : "";
 
     card.innerHTML = `
       <div class="proj-header">

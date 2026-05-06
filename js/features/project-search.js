@@ -20,12 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.innerHTML = `
         <h3 class="text-xl font-bold">${project.name}</h3>
         <p class="text-gray-600">${project.description}</p>
-
-        <div class="flex gap-4 mt-4">
-          <a href="${project.liveDemo}" target="_blank" class="text-green-500 font-bold">🌐 Live</a>
-          <a href="${project.github}" target="_blank" class="text-blue-500 font-bold">💻 Code</a>
-        </div>
-      `;
+      `
 
       projectsContainer.appendChild(card);
     });
