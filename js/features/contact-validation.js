@@ -1,60 +1,17 @@
-function initContactValidation(){
-    const contactModal =document.getElementById("contact-modal");
-    const contactForm = document.getElementById("contact-form");
-    const contactName = document.getElementById("contact-name");
-    const contactEmail = document.getElementById("contact-email");
-    const formMessage = document.getElementById("form-message");
+function initContactValidation() {
+    const form = document.getElementById("contact-form");
+    const message = document.getElementById("form-message");
 
-    if(!contactModal || !contactForm || !contactName || !contactEmail || !formMessage){
-        console.log("Contact form elements not found");
-        return;
-    }
-    contactForm.addEventListener("submit",function(event){
-        event.preventDefault();
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        const name = contactName.value.trim();
-        const email = contactEmail.value.trim();
+        const name = document.getElementById("contact-name").value;
+        const email = document.getElementById("contact-email").value;
 
-        formMessage.textContent = "";
-        formMessage.className = "text-sm";
-
-        //name validation
-        if(name === ""){
-            formMessage.textContent = "Name is required";
-            formMessage.classList.add("text-red-500");
-            contactName.focus();
-            return;
+        if (name === "" || email === "") {
+            message.textContent = "All fields are required";
+        } else {
+            message.textContent = "Submitted successfully!";
         }
-        if(name.length < 5){
-            formMessage.textContent = "Name must be at least 5 chars";
-            formMessage.classList.add("text-red-500");
-            contactName.focus();
-            return;
-        }
-        //email validation
-        if(email === ""){
-            formMessage.textContent = "email is required";
-            formMessage.classList.add("text-red-500");
-            contactEmail.focus();
-            return;
-        }
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if(!emailPattern.test(email)){
-            formMessage.textContent = "Enter valid email";
-            formMessage.classList.add("text-red-500");
-            contactEmail.focus();
-            return;
-        }
-        formMessage.textContent = "Message submitted successfully";
-        formMessage.classList.add("text-green-600");
-        console.log("Valid credentials:",{name:name,email:email});
-        contactForm.reset();
-    });
-    contactName.addEventListener("input",function(){
-        formMessage.textContent = "";
-    });
-    contactEmail.addEventListener("input",function(){
-        formMessage.textContent = "";
     });
 }

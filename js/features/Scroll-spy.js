@@ -1,28 +1,16 @@
 function initScrollSpy() {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a[href^='#']");
+  const sections = document.querySelectorAll("section[id]");
+  const links = document.querySelectorAll(".nav-link");
 
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      const sectionHeight = section.offsetHeight;
-
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + sectionHeight
-      ) {
-        current = section.getAttribute("id");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(link => {
+          link.classList.toggle("active-link", link.getAttribute("href") === "#" + entry.target.id);
+        });
       }
     });
+  }, { rootMargin: "-40% 0px -55% 0px" });
 
-    navLinks.forEach((link) => {
-      link.classList.remove("active-link");
-
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active-link");
-      }
-    });
-  });
+  sections.forEach(s => observer.observe(s));
 }

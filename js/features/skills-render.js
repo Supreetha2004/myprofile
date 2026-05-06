@@ -1,66 +1,41 @@
 const skillsContainer = document.getElementById("skills-container");
 const skillsFilterContainer = document.getElementById("skills-filters");
 
-// Get categories
 const skillCategories = ["All", ...new Set(skillsData.map(s => s.category))];
 
-// Render filter buttons
 function renderSkillFilters() {
   skillsFilterContainer.innerHTML = "";
-
-  skillCategories.forEach(category => {
+  skillCategories.forEach((category, i) => {
     const btn = document.createElement("button");
     btn.innerText = category;
-
-    btn.className =
-      "px-4 py-2 border rounded hover:bg-blue-500 hover:text-white";
-
+    if (i === 0) btn.classList.add("active");
     btn.addEventListener("click", () => {
+      document.querySelectorAll("#skills-filters button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
       filterSkills(category);
-
-      // active button
-      document.querySelectorAll("#skills-filters button")
-        .forEach(b => b.classList.remove("bg-blue-500", "text-white"));
-
-      btn.classList.add("bg-blue-500", "text-white");
     });
-
     skillsFilterContainer.appendChild(btn);
   });
 }
 
-// Filter function
 function filterSkills(category) {
-  let filtered;
-
-  if (category === "All") {
-    filtered = skillsData;
-  } else {
-    filtered = skillsData.filter(skill => skill.category === category);
-  }
-
+  const filtered = category === "All" ? skillsData : skillsData.filter(s => s.category === category);
   renderSkills(filtered);
 }
 
-// Render skills
 function renderSkills(skills) {
   skillsContainer.innerHTML = "";
-
   skills.forEach(skill => {
     const div = document.createElement("div");
-
-    div.className =
-      "p-4 bg-white shadow rounded text-center hover:scale-105 transition";
-
+    div.className = "skill-card";
     div.innerHTML = `
-      <h3 class="font-bold">${skill.name}</h3>
-      <p class="text-sm text-gray-500">${skill.category}</p>
+      <div class="skill-initial">${skill.shortLabel || skill.name[0]}</div>
+      <div class="skill-name">${skill.name}</div>
+      <div class="skill-cat">${skill.category}</div>
     `;
-
     skillsContainer.appendChild(div);
   });
 }
 
-// Init
 renderSkillFilters();
 renderSkills(skillsData);

@@ -1,76 +1,62 @@
 const filterContainer = document.getElementById("project-filters");
 const projectsContainer = document.getElementById("projects-container");
+const countElement = document.getElementById("project-count");
 
-// Get unique categories
 const categories = ["All", ...new Set(projectsData.map(p => p.category))];
 
-// Render filter buttons
 function renderFilters() {
   filterContainer.innerHTML = "";
-
-  categories.forEach(category => {
+  categories.forEach((category, i) => {
     const btn = document.createElement("button");
     btn.innerText = category;
-
-    btn.className =
-      "px-4 py-2 border rounded hover:bg-blue-500 hover:text-white";
-
+    if (i === 0) btn.classList.add("active");
     btn.addEventListener("click", () => {
+      document.querySelectorAll("#project-filters button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
       filterProjects(category);
-
-      // Active button highlight
-      document.querySelectorAll("#project-filters button")
-        .forEach(b => b.classList.remove("bg-blue-500", "text-white"));
-
-      btn.classList.add("bg-blue-500", "text-white");
     });
-
     filterContainer.appendChild(btn);
   });
 }
 
-// Filter function
 function filterProjects(category) {
-  let filtered;
-
-  if (category === "All") {
-    filtered = projectsData;
-  } else {
-    filtered = projectsData.filter(project => project.category === category);
-  }
-
+  const filtered = category === "All" ? projectsData : projectsData.filter(p => p.category === category);
   renderProjects(filtered);
 }
 
-// Reuse your render function
 function renderProjects(projects) {
   projectsContainer.innerHTML = "";
+  if (countElement) countElement.textContent = `${projects.length} project${projects.length !== 1 ? 's' : ''} found`;
 
   projects.forEach(project => {
     const card = document.createElement("div");
+    card.className = "proj-card";
 
-    card.className =
-      "p-6 bg-white shadow rounded hover:scale-105 transition";
+    const statusClass = project.status === "Live" ? "" : "demo";
+    const statusBadge = project.status
+      ? `<span class="proj-status ${statusClass}">${project.status}</span>` : "";
+
+    const techTags = (project.technologies || [])
+      .map(t => `<span class="proj-tag">${t}</span>`).join("");
+
+    const liveLink = project.liveDemo && !["LiveDemo", "http://127.0.0.1:5500/W4/D5/portfolio-project/index.html"].includes(project.liveDemo)
+      ? `<a href="${project.liveDemo}" target="_blank" class="proj-link">🌐 Live Demo</a>` : "";
+    const ghLink = project.github && !["Github"].includes(project.github)
+      ? `<a href="${project.github}" target="_blank" class="proj-link">💻 Source</a>` : "";
 
     card.innerHTML = `
-      <h3 class="text-xl font-bold">${project.name}</h3>
-      <p class="text-gray-600">${project.description}</p>
-
-      <p class="text-sm mt-2 font-semibold">${project.category}</p>
-
-      <div class="flex gap-4 mt-4">
-        <a href="${project.liveDemo}" target="_blank"
-          class="text-green-500 font-bold">🌐 Live</a>
-
-        <a href="${project.github}" target="_blank"
-          class="text-blue-500 font-bold">💻 Code</a>
+      <div class="proj-header">
+        <h3 class="proj-title">${project.name}</h3>
+        ${statusBadge}
       </div>
+      <p class="proj-desc">${project.description}</p>
+      ${techTags ? `<div class="proj-tags">${techTags}</div>` : ""}
+      ${liveLink || ghLink ? `<div class="proj-links">${liveLink}${ghLink}</div>` : ""}
     `;
 
     projectsContainer.appendChild(card);
   });
 }
 
-// Init
 renderFilters();
 renderProjects(projectsData);

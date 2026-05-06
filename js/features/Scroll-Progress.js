@@ -1,11 +1,6 @@
 window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-
-  const docHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
-
-  const scrollPercent = (scrollTop / docHeight) * 100;
-
-  document.getElementById("progress-bar").style.width =
-    scrollPercent + "%";
+  const bar = document.getElementById("scroll-progress-bar");
+  if (!bar) return;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = ((window.scrollY / total) * 100) + "%";
 });
