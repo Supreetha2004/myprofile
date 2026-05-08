@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="CSS/custom.css" />
 </head>
@@ -122,21 +122,21 @@
       <div class="edu-container">
         <div class="edu-card">
           <div class="edu-year">2022 – 2026</div>
-          <div class="edu-icon">🎓</div>
+          
           <h3>B.E Computer Science</h3>
           <p>CIT Mandya</p>
           <div class="edu-badge">CGPA 8.0</div>
         </div>
         <div class="edu-card">
           <div class="edu-year">2020 – 2022</div>
-          <div class="edu-icon">📘</div>
+          
           <h3>PUC — PCMB</h3>
           <p>BGS PU College</p>
           <div class="edu-badge">63%</div>
         </div>
         <div class="edu-card">
           <div class="edu-year">2020</div>
-          <div class="edu-icon">🏫</div>
+          
           <h3>SSLC</h3>
           <p>Rotary High School</p>
           <div class="edu-badge">80%</div>
@@ -154,19 +154,19 @@
       </div>
       <div class="cert-container">
         <div class="cert-card">
-          <div class="cert-icon">📊</div>
+          
           <h3>Data Science Workshop</h3>
           <p>Raaya Infotech Solutions</p>
           <div class="cert-year">2024</div>
         </div>
         <div class="cert-card">
-          <div class="cert-icon">⚡</div>
+          
           <h3>JavaScript Course</h3>
           <p>ABC Academy</p>
           <div class="cert-year">2026</div>
         </div>
         <div class="cert-card">
-          <div class="cert-icon">🤖</div>
+          
           <h3>Data Science with AI &amp; ML</h3>
           <p>Cranes Varsity</p>
           <div class="cert-year">2024</div>
@@ -207,23 +207,36 @@
         <button id="modal-close" class="modal-close">✕</button>
       </div>
       <p class="modal-sub">Fill the form and I'll get back to you soon.</p>
-      <form id="contact-form" class="contact-form">
+
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/xrejajwe" method="POST">
+
         <div class="form-group">
           <label>Name</label>
-          <input id="contact-name" type="text" placeholder="Your name" />
+          <input id="contact-name" type="text" name="name" placeholder="Your name" required />
         </div>
+
         <div class="form-group">
           <label>Email</label>
-          <input id="contact-email" type="email" placeholder="your@email.com" />
+          <input id="contact-email" type="email" name="email" placeholder="your@email.com" required />
         </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+        </div>
+
         <p id="form-message" class="form-error"></p>
-        <button type="submit" class="btn-submit">Send Message →</button>
+
+        <button type="submit" class="btn-submit">
+          Send Message →
+        </button>
       </form>
     </div>
   </div>
 
   <script src="js/data/projects.js"></script>
   <script src="js/data/skills.js"></script>
+  <script src="js/features/project-render.js"></script>
   <script src="js/features/skills-render.js"></script>
   <script src="js/features/modal.js"></script>
   <script src="js/features/contact-validation.js"></script>
