@@ -7,7 +7,7 @@ const projectsData = [
     description:
       "Online movie ticket booking system with seat selection and payment.",
     technologies: ["ReactJS", "ExpressJS", "MongoDB"],
-    liveDemo: "https://go.postman.co/workspace/dd1c801a-ead8-49e8-8dec-ca68679ae399/collection/53706569-59c15dea-a72b-4614-823a-3a56c520e8f9",
+    //liveDemo: "https://go.postman.co/workspace/dd1c801a-ead8-49e8-8dec-ca68679ae399/collection/53706569-59c15dea-a72b-4614-823a-3a56c520e8f9",
     github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/Projects/Guided%20Project/BookMyShowClone"
   },
   {
@@ -26,7 +26,7 @@ const projectsData = [
     description:
       "personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "Tailwind CSS", "JavaScript"],
-    liveDemo: "http://127.0.0.1:5500/myprofile/index.html",
+    //liveDemo: "http://127.0.0.1:5500/myprofile/index.html",
     github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/W4/D5/portfolio-project"
   },
   {
