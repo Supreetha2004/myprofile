@@ -13,10 +13,10 @@ const projectsData = [
   {
     id: 2,
     name: "CLI-based LMS",
-    category: "Node.js",
+    category: "full stack",
     description:
       "CLI-based LMS manages courses, students, enrollments through terminal interface.",
-    technologies: ["ReactJS", "ExpressJS", "MongoDB"],
+    technologies: ["ReactJS", "ExpressJS", "MongoDB","Node.js","html","css"],
     //github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/Team%20Project/CLI-based%20LMS/MERN_Week1_V1.0"
   },
   {
