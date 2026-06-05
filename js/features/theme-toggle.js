@@ -1,17 +1,19 @@
 const toggleBtn = document.getElementById("theme-toggle");
 const icon = toggleBtn ? toggleBtn.querySelector(".theme-icon") : null;
 
-function applyTheme(dark) {
-  document.body.classList.toggle("dark", dark);
-  if (icon) icon.textContent = dark ? "☾" : "☀";
+function applyTheme(isLight) {
+  document.body.classList.toggle("light", isLight);
+  if (icon) icon.textContent = isLight ? "◑" : "◑";
+  if (icon) icon.style.transform = isLight ? "scaleX(-1)" : "scaleX(1)";
 }
 
 const saved = localStorage.getItem("theme");
-applyTheme(saved === "dark");
+applyTheme(saved === "light");
+
 if (toggleBtn) {
   toggleBtn.addEventListener("click", () => {
-    const isDark = document.body.classList.contains("dark");
-    applyTheme(!isDark);
-    localStorage.setItem("theme", !isDark ? "dark" : "light");
+    const isLight = document.body.classList.contains("light");
+    applyTheme(!isLight);
+    localStorage.setItem("theme", !isLight ? "light" : "dark");
   });
 }
