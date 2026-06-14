@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Supreetha C R — Full Stack Developer | MERN Stack | React | Node.js | Open to opportunities" />
+  <meta name="keywords" content="Full Stack Developer, MERN Stack, React, Node.js, MongoDB, JavaScript, Portfolio" />
+  <meta name="author" content="Supreetha C R" />
   <title>Supreetha C R — Full Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +14,19 @@
 </head>
 <body>
 
+  <!-- ── LOADER ── -->
+  <div id="loader">
+    <div class="loader-logo">SCR</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- ── PARTICLES ── -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ── SCROLL PROGRESS ── -->
   <div id="scroll-progress-bar"></div>
+
+  <!-- ── CURSOR ── -->
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
 
@@ -22,63 +37,76 @@
         <span class="logo-bracket"></span>SCR<span class="logo-bracket"></span>
       </a>
       <ul class="nav-links">
+        <li><a href="#about" class="nav-link"><span class="link-num">00.</span>About</a></li>
         <li><a href="#projects" class="nav-link"><span class="link-num">01.</span>Projects</a></li>
         <li><a href="#experience" class="nav-link"><span class="link-num">02.</span>Education</a></li>
         <li><a href="#certificates" class="nav-link"><span class="link-num">03.</span>Certs</a></li>
         <li><a href="#skills" class="nav-link"><span class="link-num">04.</span>Skills</a></li>
+        <li><a href="#contact" class="nav-link"><span class="link-num">05.</span>Contact</a></li>
       </ul>
       <div class="nav-actions">
         <button id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button>
-        <a href="#contact-modal" class="btn-hire" onclick="document.getElementById('modal-trigger').click();return false;">
+        <button id="modal-trigger" class="btn-hire" aria-label="Open contact form">
           <span>Hire Me</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </a>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- ── HERO ── -->
   <section id="hero" class="hero">
+    <div class="hero-bg-mesh">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+    </div>
     <div class="hero-grid-bg"></div>
-    <div class="hero-glow-left"></div>
-    <div class="hero-glow-right"></div>
 
     <div class="hero-content">
       <div class="hero-text">
         <div class="hero-intro-line">
-          <span class="intro-tag">developer</span>
+          <span class="intro-tag">✦ Available for Work</span>
         </div>
-        <div class="hero-badge"><span class="badge-dot"></span><span id="greeting"></span>&nbsp;— Available for work</div>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span id="greeting"></span>&nbsp;— Let's build something amazing
+        </div>
+
         <h1 class="hero-name">
           <span class="name-line-1">Hi, I'm</span>
-          <span class="name-line-2"><em>Supreetha</em></span>
+          <span class="name-line-2">Supreetha</span>
           <span class="name-line-3">C R</span>
         </h1>
-        <p class="hero-sub">
-          <span class="sub-item">Full-Stack Developer</span>
-          <span class="sub-sep">×</span>
-          <span class="sub-item">MERN Stack</span>
-          <span class="sub-sep">×</span>
-          <span class="sub-item">Competitive Programmer</span>
+
+        <div class="hero-typing-row">
+          <span class="typing-prefix"></span>
+          <span id="typing-text"></span>
+          <span class="typing-cursor"></span>
+        </div>
+
+        <p class="hero-desc">
+          Building scalable, pixel-perfect web applications with clean code and creative solutions.
+          Passionate about turning complex problems into elegant digital experiences.
         </p>
-        <p class="hero-desc">Building scalable web applications with clean code, creative solutions, and a passion for turning ideas into reality.</p>
+
         <div class="hero-cta">
-          <button onclick="initGeolocation()" class="btn-primary">
+          <a href="resume/supreetha.cv1.pdf" download class="btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <button onclick="initGeolocation()" class="btn-resume">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
             Detect Location
           </button>
-          <a href="resume/supreetha.cv1.pdf" download class="btn-resume">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Resume
-          </a>
           <div class="social-row">
-            <a href="https://github.com/Supreetha2004" target="_blank" class="social-btn" title="GitHub">
+            <a href="https://github.com/Supreetha2004" target="_blank" class="social-btn" title="GitHub" aria-label="GitHub">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
-            <a href="https://linkedin.com/in/supreetha-gowda" target="_blank" class="social-btn" title="LinkedIn">
+            <a href="https://linkedin.com/in/supreetha-gowda" target="_blank" class="social-btn" title="LinkedIn" aria-label="LinkedIn">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            <a href="mailto:supreethas745@gmail.com" class="social-btn" title="Email">
+            <a href="mailto:supreethas745@gmail.com" class="social-btn" title="Email" aria-label="Email">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/></svg>
             </a>
           </div>
@@ -86,21 +114,10 @@
         <p id="message" class="geo-message"></p>
       </div>
 
+      <!-- Hero Right — Photo + floating elements -->
       <div class="hero-right">
-        <div class="hero-image-wrap">
-          <div class="img-deco-ring"></div>
-          <div class="img-deco-square"></div>
-          <div class="image-frame">
-            <img src="my photo.jpeg" alt="Supreetha C R" />
-          </div>
-          <div class="img-badge badge-top">
-            <span class="badge-icon">⚡</span>
-            <div><span class="badge-val">MERN</span><span class="badge-sub">Full Stack</span></div>
-          </div>
-          <div class="img-badge badge-bot">
-            <span class="badge-icon">🚀</span>
-            <div><span class="badge-val">6+</span><span class="badge-sub">Projects</span></div>
-          </div>
+        <div class="image-ring">
+          <img src="my photo.jpeg" alt="Supreetha C R" />
         </div>
       </div>
     </div>
@@ -111,64 +128,137 @@
     </div>
   </section>
 
-  <!-- ── PROJECTS ── -->
-  <section id="projects" class="section">
+  <!-- ── ABOUT ── -->
+  <section id="about" class="section">
     <div class="section-inner">
-      <div class="section-header">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">01</span><span class="eyebrow-text">Selected Work</span></div>
-        <h2 class="section-title">Projects</h2>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">00.</span><span class="eyebrow-text">Who I Am</span></div>
+        <h2 class="section-title">About <span>Me</span></h2>
       </div>
-      <div class="project-toolbar">
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm <span class="about-highlight">Supreetha C R</span>, a passionate Full Stack Developer
+            specializing in the <span class="about-highlight">MERN stack</span>. Currently completing my
+            B.E. in Computer Science at CIT Mandya, I bring a strong foundation in both frontend and backend
+            development.
+          </p>
+          <p>
+            I love crafting <span class="about-highlight">scalable web applications</span> that combine clean
+            architecture with beautiful user interfaces. From building CLI tools to full-featured booking
+            systems, I enjoy tackling challenges across the stack.
+          </p>
+          <p>
+            I'm currently <span class="about-highlight">open to Full Stack Developer opportunities</span>
+            where I can contribute, grow, and continue turning ideas into impactful digital products.
+          </p>
+        </div>
+
+        <div class="stats-grid reveal reveal-delay-1">
+          <div class="stat-card">
+            <span class="stat-num" data-count="6" data-suffix="+">0</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-count="14" data-suffix="+">0</span>
+            <span class="stat-label">Technologies Learned</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-count="4" data-suffix="+">0</span>
+            <span class="stat-label">Certifications</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">01.</span><span class="eyebrow-text">Selected Work</span></div>
+        <h2 class="section-title">My <span>Projects</span></h2>
+      </div>
+
+      <div class="project-toolbar reveal">
         <div class="search-wrap">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input id="project-search" placeholder="Search projects…" />
+          <input id="project-search" placeholder="Search projects, technologies…" aria-label="Search projects" />
         </div>
-        <div id="project-filters" class="filter-chips"></div>
+        <div id="project-filters" class="filter-chips-row"></div>
       </div>
+
       <p id="project-count" class="project-count"></p>
       <div id="projects-container" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE / FRESHER ── -->
+  <section id="work" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">01.5</span><span class="eyebrow-text">Career</span></div>
+        <h2 class="section-title">Experience</h2>
+      </div>
+
+      <div class="fresher-card reveal">
+        <div class="fresher-icon-wrap">🚀</div>
+        <div class="fresher-body">
+          <h3>Fresher — Full Stack Developer</h3>
+          <p>
+            Recently completed my MERN Full Stack Developer training at Agashthiya iTech Private Limited.
+            I've built real-world projects using React, Node.js, Express, and MongoDB. I'm eager to contribute
+            to a dynamic team, bring fresh perspectives, and grow as a developer.
+          </p>
+          <span class="fresher-badge">✦ Open to Full Stack Opportunities</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── EDUCATION ── -->
   <section id="experience" class="section section-alt">
     <div class="section-inner">
-      <div class="section-header">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">02</span><span class="eyebrow-text">Background</span></div>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">02.</span><span class="eyebrow-text">Background</span></div>
         <h2 class="section-title">Education</h2>
       </div>
+
       <div class="timeline">
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2022 – 2026</div>
           <div class="timeline-card">
             <div class="tc-icon">🎓</div>
             <div class="tc-body">
-              <h3>B.E Computer Science</h3>
-              <p>CIT Mandya</p>
+              <h3>B.E. Computer Science &amp; Engineering</h3>
+              <p>CIT Mandya — Visvesvaraya Technological University</p>
             </div>
             <div class="edu-badge">CGPA 8.0</div>
           </div>
         </div>
-        <div class="timeline-item">
+
+        <div class="timeline-item reveal reveal-delay-1">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2020 – 2022</div>
           <div class="timeline-card">
             <div class="tc-icon">📚</div>
             <div class="tc-body">
-              <h3>PUC — PCMB</h3>
+              <h3>Pre-University — PCMB</h3>
               <p>BGS PU College</p>
             </div>
             <div class="edu-badge">63%</div>
           </div>
         </div>
-        <div class="timeline-item">
+
+        <div class="timeline-item reveal reveal-delay-2">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2020</div>
           <div class="timeline-card">
             <div class="tc-icon">🏫</div>
             <div class="tc-body">
-              <h3>SSLC</h3>
+              <h3>SSLC — Secondary Education</h3>
               <p>Rotary High School</p>
             </div>
             <div class="edu-badge">80%</div>
@@ -181,12 +271,13 @@
   <!-- ── CERTIFICATES ── -->
   <section id="certificates" class="section">
     <div class="section-inner">
-      <div class="section-header">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">03</span><span class="eyebrow-text">Achievements</span></div>
-        <h2 class="section-title">Certificates</h2>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">03.</span><span class="eyebrow-text">Achievements</span></div>
+        <h2 class="section-title">Certificates &amp; <span>Awards</span></h2>
       </div>
+
       <div class="cert-container">
-        <div class="cert-card">
+        <div class="cert-card reveal">
           <div class="cert-glow"></div>
           <div class="cert-badge-icon">🏆</div>
           <div class="cert-content">
@@ -195,7 +286,8 @@
           </div>
           <div class="cert-year">2026</div>
         </div>
-        <div class="cert-card">
+
+        <div class="cert-card reveal reveal-delay-1">
           <div class="cert-glow"></div>
           <div class="cert-badge-icon">📊</div>
           <div class="cert-content">
@@ -204,7 +296,8 @@
           </div>
           <div class="cert-year">2024</div>
         </div>
-        <div class="cert-card">
+
+        <div class="cert-card reveal reveal-delay-2">
           <div class="cert-glow"></div>
           <div class="cert-badge-icon">⚡</div>
           <div class="cert-content">
@@ -213,7 +306,8 @@
           </div>
           <div class="cert-year">2026</div>
         </div>
-        <div class="cert-card">
+
+        <div class="cert-card reveal reveal-delay-3">
           <div class="cert-glow"></div>
           <div class="cert-badge-icon">🤖</div>
           <div class="cert-content">
@@ -229,80 +323,161 @@
   <!-- ── SKILLS ── -->
   <section id="skills" class="section section-alt">
     <div class="section-inner">
-      <div class="section-header">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">04</span><span class="eyebrow-text">Toolkit</span></div>
-        <h2 class="section-title">Skills</h2>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">04.</span><span class="eyebrow-text">Toolkit</span></div>
+        <h2 class="section-title">Skills &amp; <span>Technologies</span></h2>
       </div>
-      <div id="skills-filters" class="filter-chips"></div>
+
+      <div id="skills-filters"></div>
       <div id="skills-container" class="skills-grid"></div>
     </div>
   </section>
 
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-num">05.</span><span class="eyebrow-text">Get In Touch</span></div>
+        <h2 class="section-title">Let's <span>Connect</span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-info-header">
+            <h3>Open to Opportunities</h3>
+            <p>I'm actively looking for Full Stack Developer roles. Whether you have a question, project idea, or job opportunity — I'd love to hear from you!</p>
+          </div>
+
+          <a href="mailto:supreethas745@gmail.com" class="contact-item">
+            <div class="ci-icon">📧</div>
+            <div><div class="ci-label">Email</div><div class="ci-value">supreethas745@gmail.com</div></div>
+          </a>
+          <a href="tel:+91-XXXXXXXXXX" class="contact-item">
+            <div class="ci-icon">📱</div>
+            <div><div class="ci-label">Phone</div><div class="ci-value">+917975575642 </div></div>
+          </a>
+          <a href="https://linkedin.com/in/supreetha-gowda" target="_blank" class="contact-item">
+            <div class="ci-icon">💼</div>
+            <div><div class="ci-label">LinkedIn</div><div class="ci-value">linkedin.com/in/supreetha-gowda</div></div>
+          </a>
+          <a href="https://github.com/Supreetha2004" target="_blank" class="contact-item">
+            <div class="ci-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div><div class="ci-label">GitHub</div><div class="ci-value">github.com/Supreetha2004</div></div>
+          </a>
+        </div>
+
+        <div class="contact-form-card reveal reveal-delay-1">
+          <h3>Send a Message</h3>
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/xrejajwe" method="POST">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" type="text" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" type="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project or opportunity…" required></textarea>
+            </div>
+            <p id="form-message" class="form-error"></p>
+            <button type="submit" class="btn-submit">
+              Send Message
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Designed &amp; Built by <strong>Supreetha C R</strong></div>
+      <div class="footer-copy">© 2026 Supreetha C R. All rights reserved.</div>
+      <div class="footer-socials">
+        <a href="https://github.com/Supreetha2004" target="_blank" class="footer-social" aria-label="GitHub">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/supreetha-gowda" target="_blank" class="footer-social" aria-label="LinkedIn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:supreethas745@gmail.com" class="footer-social" aria-label="Email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
   <!-- ── FAB / BACK TO TOP ── -->
-  <button id="modal-trigger" class="fab" aria-label="Open contact">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-  </button>
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <!-- ── MODAL ── -->
-  <div id="contact-modal" class="modal-overlay hidden">
-    <div id="modal-content" class="modal-box">
+  <!-- ── CONTACT MODAL (Hire Me popup) ── -->
+  <div id="contact-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-label="Contact form">
+    <div class="modal-box">
       <div class="modal-header">
         <div>
-          <div class="modal-tag">Get In Touch</div>
+          <div class="modal-tag">✦ Get In Touch</div>
           <h3>Let's Talk</h3>
         </div>
-        <button id="modal-close" class="modal-close">✕</button>
+        <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
       </div>
-      <p class="modal-sub">Fill the form and I'll get back to you soon.</p>
-      <form id="contact-form" class="contact-form" action="https://formspree.io/f/xrejajwe" method="POST">
+      <p class="modal-sub">I'm available for full-time roles and freelance projects. Drop me a message!</p>
+      <form id="modal-contact-form" class="contact-form" action="https://formspree.io/f/xrejajwe" method="POST">
         <div class="form-group">
-          <label>Name</label>
-          <input id="contact-name" type="text" name="name" placeholder="Your name" required />
+          <label for="m-name">Name</label>
+          <input id="m-name" type="text" name="name" placeholder="Your name" required />
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input id="contact-email" type="email" name="email" placeholder="your@email.com" required />
+          <label for="m-email">Email</label>
+          <input id="m-email" type="email" name="email" placeholder="your@email.com" required />
         </div>
         <div class="form-group">
-          <label>Message</label>
-          <textarea name="message" rows="4" placeholder="Write your message..." required></textarea>
+          <label for="m-msg">Message</label>
+          <textarea id="m-msg" name="message" rows="4" placeholder="Tell me about the opportunity…" required></textarea>
         </div>
-        <p id="form-message" class="form-error"></p>
-        <button type="submit" class="btn-submit">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></button>
+        <p id="modal-form-msg" class="form-error"></p>
+        <button type="submit" class="btn-submit">
+          Send Message
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        </button>
       </form>
     </div>
   </div>
 
+  <!-- ── SCRIPTS ── -->
   <script src="js/data/projects.js"></script>
   <script src="js/data/skills.js"></script>
-  <script src="js/features/project-render.js"></script>
-  <script src="js/features/skills-render.js"></script>
-  <script src="js/features/modal.js"></script>
-  <script src="js/features/contact-validation.js"></script>
-  <script src="js/features/theme-toggle.js"></script>
-  <script src="js/features/project-filter.js"></script>
-  <script src="js/features/BackToTOP.js"></script>
-  <script src="js/features/geolocation.js"></script>
-  <script src="js/features/project-search.js"></script>
-  <script src="js/features/typing-animation.js"></script>
-  <script src="js/features/Scroll-Progress.js"></script>
-  <script src="js/features/Scroll-spy.js"></script>
-  <script src="js/features/greeting.js"></script>
   <script src="js/main.js"></script>
+
   <script>
-    // Custom cursor
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px,${my}px)`; });
-    function animRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.transform = `translate(${rx}px,${ry}px)`; requestAnimationFrame(animRing); }
-    animRing();
-    document.querySelectorAll('a,button,input,textarea').forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('ring-hover'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('ring-hover'));
+    // Navbar scroll class
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Modal form validation (separate from contact page form)
+    document.getElementById('modal-contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('m-name').value.trim();
+      const email = document.getElementById('m-email').value.trim();
+      const msg = document.getElementById('m-msg').value.trim();
+      const out = document.getElementById('modal-form-msg');
+      if (!name || !email || !msg) {
+        out.textContent = '⚠ All fields are required.'; out.style.color = '#f87171';
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        out.textContent = '⚠ Please enter a valid email.'; out.style.color = '#f87171';
+      } else {
+        out.textContent = '✓ Message sent! I\'ll get back to you soon.'; out.style.color = '#14d2a0';
+        this.reset();
+        setTimeout(() => { out.textContent = ''; }, 5000);
+      }
     });
   </script>
 </body>

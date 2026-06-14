@@ -1,59 +1,56 @@
 const projectsData = [
   {
     id: 1,
-    
-    name: "BookMyShowClone",
-    category: "backend",
-    description:
-      "Online movie ticket booking system with seat selection and payment.",
-    technologies: ["ReactJS", "ExpressJS", "MongoDB"],
-    //liveDemo: "https://go.postman.co/workspace/dd1c801a-ead8-49e8-8dec-ca68679ae399/collection/53706569-59c15dea-a72b-4614-823a-3a56c520e8f9",
-    //github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/Projects/Guided%20Project/BookMyShowClone/MERN%20Week%203_4_GuidProject_V1_ExpressMongo/backend"
+    name: "BookMyShow Clone",
+    category: "Full Stack",
+    description: "Online movie ticket booking system with seat selection, authentication, and payment flow. Built with MERN stack for a seamless user experience.",
+    technologies: ["ReactJS", "ExpressJS", "MongoDB", "Node.js"],
+    emoji: "🎬",
+    color: "#7C3AED"
   },
   {
     id: 2,
     name: "CLI-based LMS",
-    category: "full stack",
-    description:
-      "CLI-based LMS manages courses, students, enrollments through terminal interface.",
-    technologies: ["ReactJS", "ExpressJS", "MongoDB","Node.js","html","css"],
-    //github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/Team%20Project/CLI-based%20LMS/MERN_Week1_V1.0"
+    category: "Full Stack",
+    description: "Command-line Learning Management System that manages courses, students, and enrollments through a terminal interface with persistent JSON storage.",
+    technologies: ["Node.js", "ExpressJS", "MongoDB", "HTML", "CSS"],
+    emoji: "📚",
+    color: "#06B6D4"
   },
   {
     id: 3,
     name: "Portfolio Website",
     category: "Frontend",
-    description:
-      "personal portfolio website showcasing projects, skills, and contact information.",
+    description: "Personal portfolio website showcasing projects, skills, and contact information with responsive design, modern UI, and interactive animations.",
     technologies: ["HTML", "Tailwind CSS", "JavaScript"],
-    //liveDemo: "http://127.0.0.1:5500/myprofile/index.html",
-    //github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/W4/D5/portfolio-project"
+    emoji: "🌐",
+    color: "#10B981"
   },
   {
     id: 4,
-    name: "To-Do-List",
-    category: "Express.js",
-    description:
-      "A task management app built with Express.js to create, update, delete, and manage tasks using RESTful APIs and persistent backend storage..",
-    technologies: ["JavaScript", "HTML", "CSS"],
-    liveDemo: "LiveDemo",
-    //github: "https://github.com/Supreetha2004/MERN_Stu_FebMay26Mys/tree/main/Assignments/TO-Do-List"
+    name: "To-Do List App",
+    category: "Backend",
+    description: "A task management app built with Express.js to create, update, delete, and manage tasks using RESTful APIs and persistent backend storage.",
+    technologies: ["JavaScript", "HTML", "CSS", "Express.js"],
+    emoji: "✅",
+    color: "#F59E0B"
   },
   {
     id: 5,
-    name: "Skin Cancer Detection Using CNN and YOLOv8",
+    name: "Skin Cancer Detection",
     category: "Machine Learning",
-    description:"Skin cancer detection using CNN and YOLOv8 for accurate diagnosis..",
-    technologies: ["CNN","YOLOv8"],
-    // liveDemo: "LiveDemo",
-    // github: "Github"
+    description: "Skin cancer detection system using CNN and YOLOv8 for accurate diagnosis, leveraging deep learning for medical image classification.",
+    technologies: ["CNN", "YOLOv8", "Python"],
+    emoji: "🔬",
+    color: "#EF4444"
   },
-{
+  {
     id: 6,
-    name: "Steganography (Hide Text Message) project",
-    category: "python",
-    description:"Steganography: hiding secret data within images, audio, or video files.",
-    // liveDemo: "LiveDemo",
-    // github: "Github"
+    name: "Steganography Tool",
+    category: "Python",
+    description: "A steganography tool that hides secret data within images, audio, or video files using advanced encoding techniques for secure communication.",
+    technologies: ["Python", "OpenCV", "PIL"],
+    emoji: "🔐",
+    color: "#8B5CF6"
   }
 ];
